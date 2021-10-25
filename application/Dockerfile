@@ -2,10 +2,14 @@ FROM python:3.8
 
 RUN pip install numpy
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y supervisor
+
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY . /app
 
 WORKDIR /app
 
-CMD [ "/app/application.py" ]
+RUN mkdir monitoring
+
+CMD [ "/usr/bin/supervisord" ]
