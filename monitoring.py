@@ -60,10 +60,7 @@ app.layout = html.Div(
 )
 
 
-@app.callback(
-    [Output("graph", "figure")],
-    [Input("interval", "n_intervals")],
-)
+@app.callback([Output("graph", "figure")], [Input("interval", "n_intervals")])
 def update_graph(n):
     df = pd.read_csv("data/agent.log", sep=" ", names=["ds", "y"])
     df["ds"] = pd.to_datetime(df["ds"], unit="s")

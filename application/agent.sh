@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+# Create a directory ./monitoring if it does not exist
 if [ ! -d "./monitoring" ]; then
-    mkdir -p "./monitoring"
+    mkdir ./monitoring
 fi
 FILE_LOG="./monitoring/agent.log"
 
