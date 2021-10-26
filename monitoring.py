@@ -3,7 +3,28 @@ from dash import html, dcc
 import plotly.graph_objects as go
 import pandas as pd
 from dash.dependencies import Output, Input
+from predictions import predict
+
 app = dash.Dash(__name__)
+
+
+class Predictions:
+    def __init__(self):
+        self.has_predictions = False
+        self.predictions = None
+
+    def predict(self, data):
+        self.has_predictions = True
+        self.predictions = predict(data)
+
+    def get_predictions(self):
+        if not self.has_predictions:
+            return None
+        return self.predictions
+
+
+p = Predictions()
+
 
 external_stylesheets = [
     {
@@ -48,6 +69,31 @@ def update_graph(n):
     df["ds"] = pd.to_datetime(df["ds"], unit="s")
 
     fig = go.Figure()
+
+    if n % 60 == 10:
+        p.predict(df)
+
+    if p.has_predictions:
+        preds = p.get_predictions()
+        if preds is not None:
+            fig.add_trace(
+                go.Scatter(
+                    x=preds["ds"],
+                    y=preds["yhat_lower"],
+                    fill=None,
+                    mode="lines",
+                    line={"width": 0},
+                )
+            )
+            fig.add_trace(
+                go.Scatter(
+                    x=preds["ds"],
+                    y=preds["yhat_upper"],
+                    fill="tonexty",
+                    mode="lines",
+                    line={"width": 0},
+                )
+            )
     fig.add_trace(
         go.Scatter(
             x=df["ds"],
