@@ -1,0 +1,104 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background-color: #F7F7F7;
+}
+
+.header {
+    background-color: #221f1f;
+    height: 188px;
+    padding: 16px 0 0 0;
+}
+
+.header-emoji {
+    font-size: 48px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-title {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header-description {
+    color: #CFCFCF;
+    margin: 4px auto;
+    text-align: center;
+    max-width: 284px;
+}
+
+.body-wrapper {
+    display: flex;
+}
+
+.card {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1024px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 32px;
+    height: 500px;
+    width: 100%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.18);
+    background-color: #FFFFFF;
+}
+
+.menu {
+    height: 500px;
+    width: 276px;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 32px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.18);
+}
+
+.react-numeric-input {
+    margin-left: 10px;
+    height: 48px;
+}
+
+.daq-numericinput--light__input {
+    height: 48px;
+    padding: 0px 14px;
+}
+
+.radioitems {
+    height: 36px;
+    margin-left: 10px;
+    padding-top: 12px;
+}
+
+.Select-control {
+    margin-left: 10px;
+    width: 256px;
+    height: 48px;
+}
+
+.Select--single > .Select-control .Select-value, .Select-placeholder {
+    line-height: 48px;
+}
+
+.Select--multi .Select-value-label {
+    line-height: 32px;
+}
+
+.daq-slider--light {
+    margin-left: 10px;
+    height: 36px;
+    padding-top: 12px;
+}
+
+.menu-title {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    margin-left: 10px;
+    justify-content: center;
+    font-weight: bold;
+    color: #079A82;
+}
