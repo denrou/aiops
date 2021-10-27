@@ -5,8 +5,6 @@ import pandas as pd
 from dash.dependencies import Output, Input
 from predictions import predict
 
-app = dash.Dash(__name__)
-
 
 class Predictions:
     def __init__(self):
@@ -56,7 +54,7 @@ app.layout = html.Div(
             ],
             className="graph",
         ),
-    ]
+    ],
 )
 
 
