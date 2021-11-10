@@ -10,4 +10,4 @@ clean:
 	rm -rf data/
 
 run: stop clean build
-	docker run --rm --name ${IMAGE} -d -v /Users/denis/Projects/aiops/data:/app/monitoring ${IMAGE}
+	docker run --rm --name ${IMAGE} -d -v /Users/denisroussel/Projects/aiops/data:/app/monitoring ${IMAGE}
